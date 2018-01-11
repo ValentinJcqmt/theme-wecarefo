@@ -1,0 +1,13 @@
+footer { border-top:solid 3px $black;}
+.footer-menu{
+	width:100%;
+	font-size:14px;
+	ul {
+		list-style:none;
+		margin-bottom: 0; padding-left: 0;
+		li {
+			display:inline; padding: 10px 5px;
+			a{color:#9a9a9a;}
+		}
+	}
+}

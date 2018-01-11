@@ -46,28 +46,34 @@ get_header(); ?>
 			'post_status' => 'publish',
 		);
 		$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
-		foreach ($$recent_posts as $post) {
-			var_dump($post); ?>
-			<div class="row post">
-				<div class="col-12 col-md-6">
-					<?php if(/*image*/){
-						//img
-					} else{
-						//cat
-						//titre
-					}?>
-				</div>
-				<div class="col-12 col-md-6">
-					<?php if(/*image*/){
-						//cat
-						//titre
-						//texte
-					} ?>
-					<!-- Texte -->
-					<!-- Lire plus -->
+		$n = 0;
+		foreach ($recent_posts as $article) { ?>
+			<div class="row text-black">
+				<div class="col-12 col-md-10 offset-md-1">
+					<div class="row <?php if($n == 0) echo"post-hp-first"; ?> post-hp py-2">
+						<div class="col-12 col-md-6 text-center leftblock p-1">
+							<?php if(has_post_thumbnail($article['ID'])){ ?>
+								<img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($article['ID'], 'hp-post-thumb'); ?>">
+							<? } else{ ?>
+								<div class="cat text-center text-uppercase font-arial"><?php echo get_the_category($article['ID'])[0]->cat_name; ?></div>
+								<div class="titre text-center font-didot font-style-italic text-uppercase font-weight-bold"><?php echo get_the_title($article['ID']); ?></div>
+							<?php } ?>
+						</div>
+						<div class="col-12 col-md-6 rightblock p-1">
+							<?php if(has_post_thumbnail($article['ID'])){ ?>
+								<div class="cat text-center text-uppercase font-arial"><?php echo get_the_category($article['ID'])[0]->cat_name; ?></div>
+								<div class="py-1 titre text-center font-didot font-style-italic text-uppercase font-weight-bold"><?php echo get_the_title($article['ID']); ?></div>
+							<?php } ?>
+							<div class="py-1 excerpt font-didot">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultrices justo quis odio iaculis tempus. Nullam non sodales erat. Nullam eget dui orci. In at placerat tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ac lorem sagittis, sollicitudin lacus et, efficitur dui [...]
+							</div>
+							<a class="d-block p-1 my-2 text-center font-weight-bold font-arial text-black text-uppercase bg-light-pink" href="<?php echo get_permalink($article['ID']); ?>"><?php if(qtrans_getLanguage() == "fr") echo"Lire la suite"; elseif(qtrans_getLanguage() == "en") echo"Read more" ?></a>
+						</div>
+					</div>
 				</div>
 			</div>
-		<?php } ?>
+		<?php $n++;
+		} ?>
 	</div>
 </div><!--End .main-->
 
