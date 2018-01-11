@@ -9209,6 +9209,9 @@ p img.alignright {
   float: right;
   margin-left: 15px; }
 
+.font-didot {
+  font-family: Didot; }
+
 .noselect {
   -webkit-touch-callout: none;
   /* iOS Safari */
@@ -9287,6 +9290,26 @@ h5, .h5 {
 
 /***********************************************************************************************************/
 /*Frontpage*/
+.crsl-img-container {
+  position: relative; }
+
+.crsl_quote {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 45px; }
+
+.author-quote, .company-quote {
+  padding-right: 20px; }
+
+.author-quote {
+  font-size: 36px; }
+
+.company-quote {
+  font-size: 23px; }
+
 /**********************************************************************************************************/
 .text-white, .text-white:hover, .text-white:focus, .text-white:active {
   color: #fff; }

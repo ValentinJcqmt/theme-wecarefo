@@ -1,2 +1,17 @@
 /**********************************************************************************************************/
 // HEADER
+header{height:140px;}
+.burger-icon {
+    width: 40px;
+    height: 2px;
+    background: black;
+    margin: 10px 0;
+}
+.menu-menu-header-container{
+	width: 100%;
+	ul{
+		padding-left: 0;
+		li {display: inline-block; text-transform: uppercase;padding:0 15px;}
+	}
+}
+.header-title{width:100%;}

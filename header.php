@@ -28,21 +28,21 @@
 
 <body <?php body_class(); ?>>
 	<header class="bg-white text-black fixed-top">
-		<div class="desktop-header hidden-lg-down">
+		<div class="desktop-header hidden-lg-down text-center">
 			<div class="container-fluid">
-				<div class="row header-nav">
-					<div class="header-title">
+				<div class="row header-nav text-center">
+					<div class="header-title pt-2">
 						<a href="<?php echo get_home_url(); ?>" class="d-block text-center">
 							<?php if(is_front_page()){ ?>
-								<h1 class="text-uppercase h1">We care for<br><b>models</b></h1>
+								<h1 class="text-uppercase text-center font-arial h1">We care for<br><b class="font-didot">models</b></h1>
 							<?php }
 							else{ ?>
-								<div class="text-uppercase h1">We care for<br><b>models</b></div>
+								<div class="text-uppercase text-center font-arial h1">We care for<br><b class="font-didot">models</b></div>
 							<?php } ?>
 						</a>
 					</div>
 				</div>
-				<div class="row header-menu">
+				<div class="row header-menu pt-1">
 					<?php wp_nav_menu(array('menu' => 'Menu header')); ?>
 				</div>
 			</div>
@@ -50,18 +50,18 @@
 
 		<nav class="navbar navbar-toggleable-lg hidden-xl-up py-1">
 			<div class="row">
-				<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
 			    	<div class="burger-icon"></div>
 			    	<div class="burger-icon"></div>
 			    	<div class="burger-icon"></div>
 			  	</button>
-			  	<div class="header-title d-flex my-auto mr-auto">
+			  	<div class="header-title d-flex my-auto ml-auto">
 					<a href="<?php echo get_home_url(); ?>" class="d-block">
 						<?php if(is_front_page()){ ?>
-							<h1 class="text-uppercase h1">We care for<br><b>models</b></h1>
+							<h1 class="text-uppercase h1 text-center font-arial">We care for<br><b class="font-didot">models</b></h1>
 						<?php }
 						else{ ?>
-							<div class="text-uppercase h1">We care for<br><b>models</b></div>
+							<div class="text-uppercase h1 text-center font-arial">We care for<br><b class="font-didot">models</b></div>
 						<?php } ?>
 					</a>
 				</div>
