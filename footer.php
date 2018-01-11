@@ -1,4 +1,4 @@
-<footer class="px-1 bg-white text-black">
+<footer class="p-1 bg-white text-black">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12 col-md-3 push-md-9 hashtag text-center text-md-right py-1">

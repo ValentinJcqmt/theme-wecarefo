@@ -27,8 +27,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<header class="bg-white text-black fixed-top">
-		<div class="desktop-header hidden-lg-down text-center">
+	<header class="text-black">
+		<div class="bg-white desktop-header hidden-md-down text-center fixed-top">
 			<div class="container-fluid">
 				<div class="row header-nav text-center">
 					<div class="header-title pt-2">
@@ -48,14 +48,14 @@
 			</div>
 		</div>
 
-		<nav class="navbar navbar-toggleable-lg hidden-xl-up py-1">
-			<div class="row">
-				<button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+		<nav class="bg-white navbar navbar-toggleable-md hidden-lg-up py-1">
+			<div class="row my-auto">
+				<button id="openbtn" class="navbar-toggler" type="button">
 			    	<div class="burger-icon"></div>
 			    	<div class="burger-icon"></div>
 			    	<div class="burger-icon"></div>
 			  	</button>
-			  	<div class="header-title d-flex my-auto ml-auto">
+			  	<div class="header-title text-center">
 					<a href="<?php echo get_home_url(); ?>" class="d-block">
 						<?php if(is_front_page()){ ?>
 							<h1 class="text-uppercase h1 text-center font-arial">We care for<br><b class="font-didot">models</b></h1>
@@ -65,14 +65,12 @@
 						<?php } ?>
 					</a>
 				</div>
-				<div class="langswitch"></div>
 			</div>
-		    <div class="collapse navbar-collapse" id="navbarToggler">
-				<div class="header-menu d-flex my-auto text-right py-1">
-					<div class="ml-auto">
-						<?php wp_nav_menu(array('menu' => 'Menu header')); ?>
-					</div>
-				</div>
-		  	</div>
 		</nav>
+		<div id="mySidenav" class="sidenav bg-light-pink text-black">
+			<div id="closebtn">&times;</div>
+			<div class="header-menu text-left font-arial font-weight-bold py-1">
+				<?php wp_nav_menu(array('menu' => 'Sidemenu mobile')); ?>
+			</div>
+		</div>
 	</header>

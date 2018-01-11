@@ -1,17 +1,75 @@
 /**********************************************************************************************************/
 // HEADER
-header{height:140px;}
 .burger-icon {
     width: 40px;
     height: 2px;
     background: black;
     margin: 10px 0;
 }
-.menu-menu-header-container{
+.menu-menu-header-container, .menu-sidemenu-mobile-container{
 	width: 100%;
 	ul{
 		padding-left: 0;
 		li {display: inline-block; text-transform: uppercase;padding:0 15px;}
 	}
 }
+.desktop-header .sub-menu{display: none;}
+.navbar-toggler:focus{outline: none;}
+nav.navbar{position: relative; height: 140px; border-bottom: solid 2px $gray;}
+button.navbar-toggler{position: absolute; top: 0; left:0;height: 140px;padding: 0 50px;}
 .header-title{width:100%;}
+#mySidenav .menu-sidemenu-mobile-container ul li{display: block;padding: 10px 15px}
+#mySidenav .current-menu-item{background:$pink;}
+#mySidenav {
+    overflow: hidden;
+    transition: .5s;
+    width: 250px;
+    position: absolute;
+    top: 0;
+    left:-255px;
+    z-index: 5;
+    height: 100vh;
+}
+@media(min-width:992px){
+    #mySidenav{display:none;}
+}
+.menu-item-has-children{
+    &:hover{
+        background-color: $pink;
+        &> .sub-menu{
+            max-height: 500px;
+            overflow: hidden;
+            transform:scaleY(1);
+        }
+    } 
+    .sub-menu{
+        max-height: 0px;
+    }
+}
+#mySidenav .menu-item-has-children>a{position:relative;}
+#mySidenav .menu-item-has-children>a:after {
+    content: '';
+    display: inline-block;
+    transition: .3s;
+    height: 0;
+    top: 5px;
+    right: -15px;
+    position: absolute;
+    width: 0;
+    border-bottom: solid transparent 5px;
+    border-top: solid $black 5px;
+    border-left: solid transparent 5px;
+    border-right: solid transparent 5px;
+}
+.sub-menu{
+    transition:.3s;
+    transform:scaleY(0);
+    transform-origin: top;
+    left:0;
+    width: 220px;
+    background:$pink;
+    padding-left:0;
+    overflow: hidden;
+    li a{padding-left: 20px;}
+}
+#closebtn{text-align: left;font-size: 50px;padding-left: 10px;line-height: 45px;}

@@ -36,6 +36,39 @@ get_header(); ?>
 			<?php } ?>
 		</div>
 	</div>
+	<div class="container-fluid py-4">
+		<?php
+		$args = array(
+			'offset' => 0,
+			'orderby' => 'post_date',
+			'order' => 'DESC',
+			'post_type' => 'post',
+			'post_status' => 'publish',
+		);
+		$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+		foreach ($$recent_posts as $post) {
+			var_dump($post); ?>
+			<div class="row post">
+				<div class="col-12 col-md-6">
+					<?php if(/*image*/){
+						//img
+					} else{
+						//cat
+						//titre
+					}?>
+				</div>
+				<div class="col-12 col-md-6">
+					<?php if(/*image*/){
+						//cat
+						//titre
+						//texte
+					} ?>
+					<!-- Texte -->
+					<!-- Lire plus -->
+				</div>
+			</div>
+		<?php } ?>
+	</div>
 </div><!--End .main-->
 
 <?php get_footer();
