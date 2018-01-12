@@ -13,13 +13,15 @@
 		li {display: inline-block; text-transform: uppercase;padding:0 15px;}
 	}
 }
+.h1 img{max-height: 70px;}
 .desktop-header .sub-menu{display: none;}
 .navbar-toggler:focus{outline: none;}
 nav.navbar{position: relative; height: 140px; border-bottom: solid 2px $gray;}
 button.navbar-toggler{position: absolute; top: 0; left:0;height: 140px;padding: 0 50px;}
+div.lang-switch{position: absolute; top: 0; right:0;height: 140px;padding: 0 50px; line-height: 140px; font-size: 25px;}
 .header-title{width:100%;}
 #mySidenav .menu-sidemenu-mobile-container ul li{display: block;padding: 10px 15px}
-#mySidenav .current-menu-item{background:$pink;}
+#mySidenav .current-menu-item{background:$orange;}
 #mySidenav {
     overflow: hidden;
     transition: .5s;
@@ -35,7 +37,7 @@ button.navbar-toggler{position: absolute; top: 0; left:0;height: 140px;padding: 
 }
 .menu-item-has-children{
     &:hover{
-        background-color: $pink;
+        background-color: $orange;
         &> .sub-menu{
             max-height: 500px;
             overflow: hidden;
@@ -67,18 +69,18 @@ button.navbar-toggler{position: absolute; top: 0; left:0;height: 140px;padding: 
     transform-origin: top;
     left:0;
     width: 220px;
-    background:$pink;
+    background:$orange;
     padding-left:0;
     overflow: hidden;
     li a{padding-left: 20px;}
 }
 #closebtn{text-align: left;font-size: 50px;padding-left: 10px;line-height: 45px;}
-@media(max-width:500px){
-    .h1{
-        font-size: 15px;
-        b {font-size: 25px;}
-    }
-    button.navbar-toggler {
-        padding: 0 25px;
-    }
+.current-fr .switch-to-fr, .current-en .switch-to-en{
+    border-bottom: solid 2px black;
+    padding-bottom: 3px;
+}
+@media(max-width:550px){
+    .h1 img{max-height: 42px;}
+    button.navbar-toggler {padding: 0 0 0 20px;}
+    div.lang-switch{padding: 0 10px 0 0; font-size: 15px;}
 }

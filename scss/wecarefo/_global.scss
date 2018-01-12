@@ -1,16 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=GFS+Didot');
 
-//Fonts not working
 @font-face {
-  font-family: 'Helvetica';
-  src:  url('../fonts/HelveticaNeue.dfont'),
-}
+	font-family: 'MrsEavesOT-Roman';
+	src: url('../fonts/mrseavesot-roman.eot');
+	src: url('../fonts/mrseavesot-roman.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/mrseavesot-roman.woff2') format('woff2'),
+		 url('../fonts/mrseavesot-roman.woff') format('woff'),
+		 url('../fonts/mrseavesot-roman.ttf') format('truetype');
+} 
+  
 @font-face {
-  font-family: 'MrsEaves';
-  src:  url('../fonts/MrsEavesRoman') ,
-  		url('../fonts/MrsEavesItalic'),
-  		url('../fonts/MrsEavIta'),
-  		url('../fonts/MrsEavRom');
+	font-family: 'HelveticaNeueLTStd-Lt';
+	src: url('../fonts/helveticaneueltstd-lt.eot');
+	src: url('../fonts/helveticaneueltstd-lt.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/helveticaneueltstd-lt.woff2') format('woff2'),
+		 url('../fonts/helveticaneueltstd-lt.woff') format('woff'),
+		 url('../fonts/helveticaneueltstd-lt.ttf') format('truetype');
+} 
+  
+@font-face {
+	font-family: 'HelveticaNeueLTStd-Md';
+	src: url('../fonts/helveticaneueltstd-md.eot');
+	src: url('../fonts/helveticaneueltstd-md.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/helveticaneueltstd-md.woff2') format('woff2'),
+		 url('../fonts/helveticaneueltstd-md.woff') format('woff'),
+		 url('../fonts/helveticaneueltstd-md.ttf') format('truetype');
 }
 
 //base
@@ -33,10 +47,9 @@ p img.alignright {
 
 .font-didot{font-family: 'Didot';}
 .font-arial{font-family: 'Arial';}
-
-//Fonts not working
-.font-helvetica{font-family: 'Helvetica';}
-.font-eaves{font-family: 'MrsEaves';}
+.font-helvetica-md{font-family: 'HelveticaNeueLTStd-Md';}
+.font-helvetica-lt{font-family: 'HelveticaNeueLTStd-Lt';}
+.font-eaves-rom{font-family: 'MrsEavesOT-Roman';}
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -71,7 +84,11 @@ h5,.h5{font-weight:600;}
 	h4,.h4,.display-4{font-size:1rem}
 	h5,.h5,.display-5{font-size:0.75rem}
 }
-
+@media(max-width:500px){
+    h1, .h1{
+        font-size: 15px;
+    }
+}
 //font
 .font-weight-normal{font-weight:500;}
 .font-weight-medium, .font-weight-bold{font-weight:600;}
@@ -85,11 +102,11 @@ h5,.h5{font-weight:600;}
 .owl-dots .owl-dot {
     width: 10px;
     height: 10px;
-    background: $light-pink;
+    background: $pink;
     display: inline-block;
     margin: 0 15px;
     border-radius: 50%;
-    &.active{background: $pink;}
+    &.active{background: $orange;}
 }
 .owl-item{text-align: center;}
 .crsl-img-container{
@@ -158,104 +175,157 @@ h5,.h5{font-weight:600;}
 	    font-size: 12px;
 	}
 }
-.post-hp:not(.post-hp-first){border-top:solid 2px $pink;}
+.post-hp:not(.post-hp-first){border-top:solid 2px $orange;}
 
 /*** Page content ***/
-.relative{position: relative;}
-.absolute{position: absolute;}
-.content-1013{
-	max-width: 1013px !important;
-	margin: 0 auto;
+.single-post, .page-faq{
+	.relative{position: relative;}
+	.absolute{position: absolute;}
+	.content-1013{
+		max-width: 1013px !important;
+		margin: 0 auto;
+	}
+	.content-1365{
+		max-width: 1365px !important;
+		margin: 0 auto;
+	}
+	/*heading 1*/
+	.heading-1{padding-top:20px;}
+	h1{
+		color:  #1d1d1b;
+		font-size: 30px;
+		font-weight: 400;
+		line-height: 43px;
+		text-align: center;
+		font-family:"Didot";
+	}
+	.category{
+		color:  #1d1d1b;
+		font-size: 15px;
+		line-height: 36px;
+		text-transform: uppercase !important;
+		text-align: center;
+	}
+	/*heading 2*/
+	.heading-2{				
+		font-family:Didot;
+		min-height: 70px;
+		margin: 0 auto;
+	}
+	h2{
+		color:  #000000;
+		font-size: 45px;
+		font-weight: 400;
+		line-height: 77px;
+		text-align: left;
+		text-transform: uppercase !important;
+		background-color: #DFCBC0;				
+		margin: 20px 0;
+		padding-left:50px;
+	}
+	.number{
+		top: 0;
+		right: 0;
+		color:  #000000;
+		font-size: 149.85px;
+		font-weight: 400;
+		line-height: 77px;
+		text-align: left;
+		font-style: italic;
+		margin-right: 50px;
+	}
+	/*content*/
+	.content-text{
+		color:  #1d1d1b;
+		font-size: 27px;
+		line-height: 36px;
+		text-align: left;
+	}
+	.content-text p{
+		color:  #1d1d1b;
+		font-size: 27px;
+		line-height: 36px;
+		text-align: left;
+		margin:30px 0;
+		font-family:"Didot";
+	}
+	h3{
+		font-weight: 300;
+		text-transform: uppercase;
+		font-size:27px;
+		margin: 10px 0;
+		letter-spacing:1px;
+	}
+	.one_column{padding:10px;}
+	.one_column p{font-family:'Didot';font-size:27px;line-height:36px;margin:20px 0;}
 }
-.content-1365{
-	max-width: 1365px !important;
-	margin: 0 auto;
-}
-/*heading 1*/
-.heading-1{padding-top:20px;}
-h1{
-	color:  #1d1d1b;
-	font-size: 30px;
-	font-weight: 400;
-	line-height: 43px;
-	text-align: center;
-	font-family:"Didot";
-}
-.category{
-	color:  #1d1d1b;
-	font-size: 15px;
-	line-height: 36px;
-	text-transform: uppercase !important;
-	text-align: center;
-}
-/*heading 2*/
-.heading-2{				
-	font-family:Didot;
-	min-height: 70px;
-	margin: 0 auto;
-}
-h2{
-	color:  #000000;
-	font-size: 45px;
-	font-weight: 400;
-	line-height: 77px;
-	text-align: left;
-	text-transform: uppercase !important;
-	background-color: #DFCBC0;				
-	margin: 20px 0;
-	padding-left:50px;
-}
-.number{
-	top: 0;
-	right: 0;
-	color:  #000000;
-	font-size: 149.85px;
-	font-weight: 400;
-	line-height: 77px;
-	text-align: left;
-	font-style: italic;
-	margin-right: 50px;
-}
-/*content*/
-.content-text{
-	color:  #1d1d1b;
-	font-size: 27px;
-	line-height: 36px;
-	text-align: left;
-}
-.content-text p{
-	color:  #1d1d1b;
-	font-size: 27px;
-	line-height: 36px;
-	text-align: left;
-	margin:30px 0;
-	font-family:"Didot";
-}
-h3{
-	font-weight: 300;
-	text-transform: uppercase;
-	font-size:27px;
-	margin: 10px 0;
-	letter-spacing:1px;
-}
-.one_column{padding:10px;}
-.one_column p{font-family:'Didot';font-size:27px;line-height:36px;margin:20px 0;}
 @media(max-width:600px){
-	h2 {
-	    font-size: 30px;
-	    line-height: 60px;
-	    padding-left: 20px;
+	.single-post, .page-faq{
+		h2 {
+		    font-size: 30px;
+		    line-height: 60px;
+		    padding-left: 20px;
+		}
+		.number {
+		    font-size: 120px;
+		    line-height: 60px;
+		    margin-right: 10px;
+		}
+		.content-text p {
+		    font-size: 25px;
+		    line-height: 30px;
+		}
+		h3 {
+		    font-size: 24px;
+		}
 	}
-	.number {
-	    font-size: 120px;
-	    line-height: 60px;
-	    margin-right: 10px;
-	}
-	.content-text p {
-	    font-size: 25px;
+	.page-faq .content-text{
+		font-size: 25px;
 	    line-height: 30px;
 	}
-	h3 {
-	    font-size: 24px;
+}
+
+/*FAQ*/
+.faq-panels{
+	button:focus{outline:none;}
+	button.btn-panel, button.btn-question{position:relative;}
+	button.btn-panel{width:100%;border:none; padding:20px 40px 20px 20px;}
+	button.btn-question{
+		width:100%;
+		border-bottom:solid 1px $black;
+		border-top:solid 1px $black;
+		border-left:solid 1px $black;
+		border-right:solid 1px $black;
+		margin-top: -1px;
+	    padding: 20px 30px 20px 20px;
+	}
+	button.btn-panel:after,	button.btn-question:after{
+		color: #000;
+	    font-weight: lighter;
+	    font-size: 45px;
+	    position: absolute;
+	    font-family: Arial;
+	    right: 15px;
+	    top: calc( 50% - ( 63px / 2 ) );
+	    line-height: 63px;
+	}
+	button.btn-panel.collapsed:after, button.btn-question.collapsed:after{content:"+";}
+	button.btn-panel:after, button.btn-question:after{content:"-";}
+	button.btn-question.first-question{margin-top:0;}
+}
+.documents{
+	.doc-link{max-width: 450px;position:relative;padding:20px 40px 20px 20px;}
+	.doc-link:after{
+	    position: absolute;
+	    right: 15px;
+	    top: calc( 50% - ( 25px / 2 ) );
+	    line-height: 63px;
+	    content:"";
+	    display: inline-block;
+	    width: 25px;
+	    height: 25px;
+	    background:url('../img/icon-download.png');
+	    background-size: contain;
+	    background-position: center center;
 	}
 }
