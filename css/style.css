@@ -9228,9 +9228,6 @@ p img.alignright {
 .font-didot {
   font-family: 'Didot'; }
 
-.font-arial {
-  font-family: 'Arial'; }
-
 .font-helvetica-md {
   font-family: 'HelveticaNeueLTStd-Md'; }
 
@@ -9325,6 +9322,23 @@ h5, .h5 {
 
 /***********************************************************************************************************/
 /*Frontpage*/
+.img-hp-mobile-container {
+  overflow: hidden;
+  max-height: calc(100vh - 170px);
+  position: relative; }
+
+.img-hp-mobile-container #chevron {
+  position: absolute;
+  bottom: 15px;
+  left: calc(50% - 17px);
+  cursor: pointer; }
+
+@media (max-height: 550px) {
+  .img-hp-mobile-container {
+    max-height: calc(100vh - 148px); } }
+.post-hp .font-helvetica-lt {
+  letter-spacing: 1px; }
+
 .owl-dots {
   text-align: center; }
 
@@ -9348,6 +9362,10 @@ h5, .h5 {
   .crsl-img-container img {
     min-height: 530px; }
 
+.container-fluid.container-crsl-hp {
+  padding-left: 0;
+  padding-right: 0; }
+
 @media (max-width: 800px) {
   .crsl-img-container img {
     max-height: 530px;
@@ -9370,9 +9388,30 @@ h5, .h5 {
 .company-quote {
   font-size: 23px; }
 
-.quote {
+.quote, .hp-quote {
   padding: 0 30px 20px;
   position: relative; }
+
+.hp-mobile-quote .hp-quote {
+  font-size: 70px;
+  font-style: italic;
+  padding: 0 70px 20px; }
+.hp-mobile-quote .author-quote {
+  font-size: 35px;
+  padding-right: 90px;
+  font-style: italic; }
+
+.hp-quote:before {
+  content: url("../img/quote-2-pink.png");
+  position: absolute;
+  top: -20px;
+  left: 50px; }
+
+.hp-quote:after {
+  content: url("../img/quote-1-pink.png");
+  position: absolute;
+  bottom: 0;
+  right: 50px; }
 
 .quote:before {
   content: url("../img/quote-1.png");
@@ -9394,6 +9433,63 @@ h5, .h5 {
     font-size: 25px; }
 
   .company-quote {
+    font-size: 15px; }
+
+  .hp-mobile-quote .hp-quote {
+    font-size: 25px;
+    font-style: italic;
+    padding: 0 25px 20px; }
+  .hp-mobile-quote .author-quote {
+    font-size: 20px;
+    padding-right: 40px;
+    font-style: italic; }
+
+  .hp-quote:before {
+    left: 0; }
+
+  .hp-quote:after {
+    right: 0; } }
+.bg-bandeau-hp-mobile {
+  background: #f3e6df;
+  transition: .3s;
+  position: relative;
+  padding-right: 95px; }
+
+.bg-bandeau-hp-mobile:after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  display: block;
+  background: url("../img/chevron-black.png");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 50px;
+  top: calc(50% - 30px); }
+
+.bandeau-title {
+  font-size: 40px;
+  letter-spacing: 5px; }
+
+.bandeau-desc {
+  font-size: 30px; }
+
+.bg-bandeau-hp-mobile:hover {
+  background: #e2cdc2; }
+
+@media (max-width: 792px) {
+  .bg-bandeau-hp-mobile {
+    padding-right: 40px; }
+
+  .bg-bandeau-hp-mobile:after {
+    right: 0; }
+
+  .bandeau-title {
+    font-size: 20px;
+    letter-spacing: 1px; }
+
+  .bandeau-desc {
     font-size: 15px; } }
 .rightblock a {
   width: 150px;
@@ -9453,24 +9549,26 @@ h5, .h5 {
     padding-top: 20px; }
   .single-post h1, .page-faq h1 {
     color: #1d1d1b;
-    font-size: 30px;
+    font-size: 45px;
     font-weight: 400;
     line-height: 43px;
     text-align: center;
-    font-family: "Didot"; }
+    font-family: 'Didot';
+    font-style: italic;
+    margin: 15px 0 30px 0; }
   .single-post .category, .page-faq .category {
     color: #1d1d1b;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 36px;
-    text-transform: uppercase !important;
-    text-align: center; }
+    text-align: center;
+    font-family: 'HelveticaNeueLTStd-Md'; }
   .single-post .heading-2, .page-faq .heading-2 {
-    font-family: Didot;
+    font-family: 'Didot';
     min-height: 70px;
     margin: 0 auto; }
   .single-post h2, .page-faq h2 {
     color: #000000;
-    font-size: 45px;
+    font-size: 30px;
     font-weight: 400;
     line-height: 77px;
     text-align: left;
@@ -9487,25 +9585,27 @@ h5, .h5 {
     line-height: 77px;
     text-align: left;
     font-style: italic;
-    margin-right: 50px; }
+    margin-right: 50px;
+    font-family: 'Didot'; }
   .single-post .content-text, .page-faq .content-text {
     color: #1d1d1b;
     font-size: 27px;
     line-height: 36px;
-    text-align: left; }
-  .single-post .content-text p, .page-faq .content-text p {
-    color: #1d1d1b;
-    font-size: 27px;
-    line-height: 36px;
     text-align: left;
-    margin: 30px 0;
-    font-family: "Didot"; }
+    font-family: 'MrsEavesOT-Roman'; }
+    .single-post .content-text p, .page-faq .content-text p {
+      margin: 30px 0;
+      font-family: 'MrsEavesOT-Roman'; }
+    @media (max-width: 1024px) {
+      .single-post .content-text, .page-faq .content-text {
+        padding: 0 10vw; } }
   .single-post h3, .page-faq h3 {
     font-weight: 300;
     text-transform: uppercase;
     font-size: 27px;
     margin: 10px 0;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    font-family: 'HelveticaNeueLTStd-Lt'; }
   .single-post .one_column, .page-faq .one_column {
     padding: 10px; }
   .single-post .one_column p, .page-faq .one_column p {
@@ -9513,6 +9613,68 @@ h5, .h5 {
     font-size: 27px;
     line-height: 36px;
     margin: 20px 0; }
+  .single-post .two-columns .pl-2, .page-faq .two-columns .pl-2 {
+    padding-left: 20px !important; }
+  @media (max-width: 1024px) {
+    .single-post .two-columns .pr-2, .single-post .two-columns .pl-2, .page-faq .two-columns .pr-2, .page-faq .two-columns .pl-2 {
+      padding: unset !important; } }
+  @media (max-width: 767px) {
+    .single-post .two-columns img, .page-faq .two-columns img {
+      width: 100%; } }
+  .single-post .citation, .page-faq .citation {
+    line-height: 60px;
+    font-style: italic;
+    color: #1d1d1b;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 60px;
+    text-transform: uppercase;
+    margin: 30px 0;
+    font-family: 'Didot'; }
+    .single-post .citation:before, .page-faq .citation:before {
+      content: url(../img/quote-2-pink.png); }
+    .single-post .citation:after, .page-faq .citation:after {
+      content: url(../img/quote-1-pink.png); }
+    @media (max-width: 1024px) {
+      .single-post .citation, .page-faq .citation {
+        padding: 0 10vw; } }
+  .single-post .name, .page-faq .name {
+    font-size: 36px;
+    line-height: 24px;
+    color: #1d1d1b;
+    font-style: italic;
+    font-family: 'Didot'; }
+    @media (max-width: 1024px) {
+      .single-post .name, .page-faq .name {
+        padding: 0 10vw; } }
+  .single-post .company, .page-faq .company {
+    font-size: 23px;
+    line-height: 24px;
+    color: #898989;
+    font-style: italic;
+    font-family: 'Didot'; }
+    @media (max-width: 1024px) {
+      .single-post .company, .page-faq .company {
+        padding: 0 10vw; } }
+  @media (max-width: 1024px) {
+    .single-post .video-centered, .page-faq .video-centered {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0;
+      overflow: hidden; }
+      .single-post .video-centered:before, .page-faq .video-centered:before {
+        padding-top: 42.8571428571%;
+        display: block;
+        content: ""; }
+      .single-post .video-centered .embed-responsive-item, .single-post .video-centered iframe, .single-post .video-centered embed, .single-post .video-centered object, .single-post .video-centered video, .page-faq .video-centered .embed-responsive-item, .page-faq .video-centered iframe, .page-faq .video-centered embed, .page-faq .video-centered object, .page-faq .video-centered video {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0; } }
 
 @media (max-width: 600px) {
   .single-post h2, .page-faq h2 {
@@ -9536,7 +9698,8 @@ h5, .h5 {
 .faq-panels button:focus {
   outline: none; }
 .faq-panels button.btn-panel, .faq-panels button.btn-question {
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
 .faq-panels button.btn-panel {
   width: 100%;
   border: none;
@@ -9596,10 +9759,25 @@ h5, .h5 {
     .menu-menu-header-container ul li, .menu-sidemenu-mobile-container ul li {
       display: inline-block;
       text-transform: uppercase;
-      padding: 0 15px; }
+      padding: 0 15px;
+      font-family: "HelveticaNeueLTStd-Lt"; }
+
+.menu-sidemenu-mobile-container ul li {
+  font-weight: 300;
+  font-family: "HelveticaNeueLTStd-Lt";
+  transition: .3s;
+  background: #f3e6df; }
+
+.menu-sidemenu-mobile-container ul li:hover {
+  font-weight: 300;
+  font-family: "HelveticaNeueLTStd-Lt";
+  background: #d98b74; }
 
 .h1 img {
-  max-height: 70px; }
+  max-height: 68px; }
+
+.desktop-header {
+  background: rgba(255, 255, 255, 0.85); }
 
 .desktop-header .sub-menu {
   display: none; }
@@ -9607,26 +9785,31 @@ h5, .h5 {
 .navbar-toggler:focus {
   outline: none; }
 
-nav.navbar {
-  position: relative;
-  height: 140px;
-  border-bottom: solid 2px #A0A0A0; }
+nav .navbar-top {
+  position: relative; }
 
 button.navbar-toggler {
-  position: absolute;
   top: 0;
   left: 0;
-  height: 140px;
+  height: 60px;
   padding: 0 50px; }
 
 div.lang-switch {
-  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  padding: 0 50px;
+  line-height: 60px;
+  font-size: 25px; }
+
+.desktop-header div.lang-switch {
   top: 0;
   right: 0;
   height: 140px;
   padding: 0 50px;
   line-height: 140px;
-  font-size: 25px; }
+  font-size: 25px;
+  position: absolute; }
 
 .header-title {
   width: 100%; }
@@ -9635,18 +9818,18 @@ div.lang-switch {
   display: block;
   padding: 10px 15px; }
 
-#mySidenav .current-menu-item {
+#mySidenav .current-menu-item, #mySidenav .current-menu-item li {
   background: #d98b74; }
 
 #mySidenav {
   overflow: hidden;
   transition: .5s;
   width: 250px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: -255px;
   z-index: 5;
-  height: 100vh; }
+  height: 105vh; }
 
 @media (min-width: 992px) {
   #mySidenav {
@@ -9657,6 +9840,8 @@ div.lang-switch {
     max-height: 500px;
     overflow: hidden;
     transform: scaleY(1); }
+    .menu-item-has-children:hover > .sub-menu li {
+      background: #d98b74; }
 .menu-item-has-children .sub-menu {
   max-height: 0px; }
 
@@ -9664,18 +9849,12 @@ div.lang-switch {
   position: relative; }
 
 #mySidenav .menu-item-has-children > a:after {
-  content: '';
+  content: '+';
   display: inline-block;
-  transition: .3s;
-  height: 0;
-  top: 5px;
+  top: 0;
   right: -15px;
   position: absolute;
-  width: 0;
-  border-bottom: solid transparent 5px;
-  border-top: solid #000 5px;
-  border-left: solid transparent 5px;
-  border-right: solid transparent 5px; }
+  line-height: 16px; }
 
 .sub-menu {
   transition: .3s;
@@ -9686,8 +9865,6 @@ div.lang-switch {
   background: #d98b74;
   padding-left: 0;
   overflow: hidden; }
-  .sub-menu li a {
-    padding-left: 20px; }
 
 #closebtn {
   text-align: left;
@@ -9701,14 +9878,13 @@ div.lang-switch {
 
 @media (max-width: 550px) {
   .h1 img {
-    max-height: 42px; }
+    max-height: 46px; }
 
   button.navbar-toggler {
     padding: 0 0 0 20px; }
 
   div.lang-switch {
-    padding: 0 10px 0 0;
-    font-size: 15px; } }
+    padding: 0 20px 0 0; } }
 footer {
   border-top: solid 3px #000; }
 
@@ -9724,6 +9900,9 @@ footer {
       padding: 10px 20px; }
       .footer-menu ul li a {
         color: #9a9a9a; }
+
+#back-to-top {
+  cursor: pointer; }
 
 @media (max-width: 992px) {
   .footer-menu ul li {

@@ -10,27 +10,33 @@
 	width: 100%;
 	ul{
 		padding-left: 0;
-		li {display: inline-block; text-transform: uppercase;padding:0 15px;}
+		li {display: inline-block; text-transform: uppercase;padding:0 15px;font-family: "HelveticaNeueLTStd-Lt"}
 	}
 }
-.h1 img{max-height: 70px;}
+.menu-sidemenu-mobile-container ul li{font-weight: 300; font-family: "HelveticaNeueLTStd-Lt"; transition:.3s; background:$light-pink;}
+.menu-sidemenu-mobile-container ul li:hover{font-weight: 300; font-family: "HelveticaNeueLTStd-Lt"; background:$orange;}
+.h1 img{max-height: 68px;}
+.desktop-header{background:rgba(255,255,255,.85);}
 .desktop-header .sub-menu{display: none;}
 .navbar-toggler:focus{outline: none;}
-nav.navbar{position: relative; height: 140px; border-bottom: solid 2px $gray;}
-button.navbar-toggler{position: absolute; top: 0; left:0;height: 140px;padding: 0 50px;}
-div.lang-switch{position: absolute; top: 0; right:0;height: 140px;padding: 0 50px; line-height: 140px; font-size: 25px;}
+nav .navbar-top{position: relative;}
+button.navbar-toggler{top: 0; left:0;height: 60px;padding: 0 50px;}
+div.lang-switch{top: 0; right:0;height: 60px;padding: 0 50px; line-height: 60px; font-size: 25px;}
+.desktop-header{
+    div.lang-switch{top: 0; right:0;height: 140px;padding: 0 50px; line-height: 140px; font-size: 25px; position:absolute;}
+}
 .header-title{width:100%;}
 #mySidenav .menu-sidemenu-mobile-container ul li{display: block;padding: 10px 15px}
-#mySidenav .current-menu-item{background:$orange;}
+#mySidenav .current-menu-item, #mySidenav .current-menu-item li{background:$orange;}
 #mySidenav {
     overflow: hidden;
     transition: .5s;
     width: 250px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left:-255px;
     z-index: 5;
-    height: 100vh;
+    height: 105vh;
 }
 @media(min-width:992px){
     #mySidenav{display:none;}
@@ -42,6 +48,7 @@ div.lang-switch{position: absolute; top: 0; right:0;height: 140px;padding: 0 50p
             max-height: 500px;
             overflow: hidden;
             transform:scaleY(1);
+            li{background:$orange;}
         }
     } 
     .sub-menu{
@@ -50,18 +57,12 @@ div.lang-switch{position: absolute; top: 0; right:0;height: 140px;padding: 0 50p
 }
 #mySidenav .menu-item-has-children>a{position:relative;}
 #mySidenav .menu-item-has-children>a:after {
-    content: '';
+    content: '+';
     display: inline-block;
-    transition: .3s;
-    height: 0;
-    top: 5px;
+    top: 0;
     right: -15px;
     position: absolute;
-    width: 0;
-    border-bottom: solid transparent 5px;
-    border-top: solid $black 5px;
-    border-left: solid transparent 5px;
-    border-right: solid transparent 5px;
+    line-height: 16px;
 }
 .sub-menu{
     transition:.3s;
@@ -72,7 +73,6 @@ div.lang-switch{position: absolute; top: 0; right:0;height: 140px;padding: 0 50p
     background:$orange;
     padding-left:0;
     overflow: hidden;
-    li a{padding-left: 20px;}
 }
 #closebtn{text-align: left;font-size: 50px;padding-left: 10px;line-height: 45px;}
 .current-fr .switch-to-fr, .current-en .switch-to-en{
@@ -80,7 +80,7 @@ div.lang-switch{position: absolute; top: 0; right:0;height: 140px;padding: 0 50p
     padding-bottom: 3px;
 }
 @media(max-width:550px){
-    .h1 img{max-height: 42px;}
+    .h1 img{max-height: 46px;}
     button.navbar-toggler {padding: 0 0 0 20px;}
-    div.lang-switch{padding: 0 10px 0 0; font-size: 15px;}
+    div.lang-switch{padding: 0 20px 0 0;}
 }

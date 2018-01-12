@@ -66,3 +66,10 @@ function ryanbenhase_unregister_tags() {
     unregister_taxonomy_for_object_type( 'post_tag', 'post' );
 }
 add_action( 'init', 'ryanbenhase_unregister_tags' );
+
+/*Bootstrap Image class*****************************************************************************************************/
+function image_tag_class($class) {
+    $class .= ' img-fluid';
+    return $class;
+}
+add_filter('get_image_tag_class', 'image_tag_class' );
