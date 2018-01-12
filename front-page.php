@@ -54,7 +54,7 @@ get_header(); ?>
 						<div class="col-12 col-md-6 text-center leftblock p-1">
 							<?php if(has_post_thumbnail($article['ID'])){ ?>
 								<img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($article['ID'], 'hp-post-thumb'); ?>">
-							<? } else{ ?>
+							<?php } else{ ?>
 								<div class="cat text-center text-uppercase font-arial"><?php echo get_the_category($article['ID'])[0]->cat_name; ?></div>
 								<div class="titre text-center font-didot font-style-italic text-uppercase font-weight-bold"><?php echo get_the_title($article['ID']); ?></div>
 							<?php } ?>

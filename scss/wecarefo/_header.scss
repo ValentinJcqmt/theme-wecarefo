@@ -73,3 +73,12 @@ button.navbar-toggler{position: absolute; top: 0; left:0;height: 140px;padding: 
     li a{padding-left: 20px;}
 }
 #closebtn{text-align: left;font-size: 50px;padding-left: 10px;line-height: 45px;}
+@media(max-width:500px){
+    .h1{
+        font-size: 15px;
+        b {font-size: 25px;}
+    }
+    button.navbar-toggler {
+        padding: 0 25px;
+    }
+}

@@ -9401,9 +9401,137 @@ h5, .h5 {
 .rightblock .titre, .leftblock .titre {
   font-style: italic; }
 
+@media (max-width: 500px) {
+  .rightblock .excerpt {
+    font-size: 16px;
+    line-height: 25px; }
+
+  .leftblock .cat {
+    font-size: 12px; }
+  .leftblock .titre {
+    font-size: 25px; }
+
+  .crsl_quote {
+    font-size: 14px; }
+
+  .author-quote {
+    font-size: 18px; }
+
+  .company-quote {
+    font-size: 12px; } }
 .post-hp:not(.post-hp-first) {
   border-top: solid 2px #d98b74; }
 
+/*** Page content ***/
+.relative {
+  position: relative; }
+
+.absolute {
+  position: absolute; }
+
+.content-1013 {
+  max-width: 1013px !important;
+  margin: 0 auto; }
+
+.content-1365 {
+  max-width: 1365px !important;
+  margin: 0 auto; }
+
+/*heading 1*/
+.heading-1 {
+  padding-top: 20px; }
+
+h1 {
+  color: #1d1d1b;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 43px;
+  text-align: center;
+  font-family: "Didot"; }
+
+.category {
+  color: #1d1d1b;
+  font-size: 15px;
+  line-height: 36px;
+  text-transform: uppercase !important;
+  text-align: center; }
+
+/*heading 2*/
+.heading-2 {
+  font-family: Didot;
+  min-height: 70px;
+  margin: 0 auto; }
+
+h2 {
+  color: #000000;
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 77px;
+  text-align: left;
+  text-transform: uppercase !important;
+  background-color: #DFCBC0;
+  margin: 20px 0;
+  padding-left: 50px; }
+
+.number {
+  top: 0;
+  right: 0;
+  color: #000000;
+  font-size: 149.85px;
+  font-weight: 400;
+  line-height: 77px;
+  text-align: left;
+  font-style: italic;
+  margin-right: 50px; }
+
+/*content*/
+.content-text {
+  color: #1d1d1b;
+  font-size: 27px;
+  line-height: 36px;
+  text-align: left; }
+
+.content-text p {
+  color: #1d1d1b;
+  font-size: 27px;
+  line-height: 36px;
+  text-align: left;
+  margin: 30px 0;
+  font-family: "Didot"; }
+
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 27px;
+  margin: 10px 0;
+  letter-spacing: 1px; }
+
+.one_column {
+  padding: 10px; }
+
+.one_column p {
+  font-family: 'Didot';
+  font-size: 27px;
+  line-height: 36px;
+  margin: 20px 0; }
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 30px;
+    line-height: 60px;
+    padding-left: 20px; }
+
+  .number {
+    font-size: 120px;
+    line-height: 60px;
+    margin-right: 10px; }
+
+  .content-text p {
+    font-size: 25px;
+    line-height: 30px; }
+
+  h3 {
+    font-size: 24px; } }
 /**********************************************************************************************************/
 .burger-icon {
   width: 40px;
@@ -9505,6 +9633,14 @@ button.navbar-toggler {
   padding-left: 10px;
   line-height: 45px; }
 
+@media (max-width: 500px) {
+  .h1 {
+    font-size: 15px; }
+    .h1 b {
+      font-size: 25px; }
+
+  button.navbar-toggler {
+    padding: 0 25px; } }
 footer {
   border-top: solid 3px #000; }
 
@@ -9517,10 +9653,13 @@ footer {
     padding-left: 0; }
     .footer-menu ul li {
       display: inline;
-      padding: 10px 5px; }
+      padding: 10px 20px; }
       .footer-menu ul li a {
         color: #9a9a9a; }
 
+@media (max-width: 992px) {
+  .footer-menu ul li {
+    padding: 10px 10px; } }
 .text-white, .text-white:hover, .text-white:focus, .text-white:active {
   color: #fff; }
 
