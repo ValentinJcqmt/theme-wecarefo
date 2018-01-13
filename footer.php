@@ -1,19 +1,17 @@
 <footer class="pb-1 pt-3 bg-white text-black">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-12 col-md-3">
-				<div id="back-to-top" class="text-uppercase font-helvetica-md text-black text-center text-md-left cursor-pointer">
-					<?php if(qtrans_getLanguage() == "fr"){
-						echo "Haut de page";
-					}elseif(qtrans_getLanguage() == "en"){
-						echo "Back to top";
-					} ?>
+			<div class="col-12 col-md-3 d-flex hidden-lg-up text-center text-md-left">
+				<div id="back-to-top" class="my-auto text-uppercase font-helvetica-lt font-weight-bold text-black cursor-pointer">
+					Back to top
 				</div>
 			</div>
-			<div class="col-12 col-md-3 push-md-6 hashtag text-center text-md-right py-1 text-orange">
-				#wecareformodels
-			</div>
-			<div class="col-12 offset-0 col-md-6 pull-md-3 py-1">
+			<div class="col-12 offset-0 col-md-6 offset-md-3 py-1">
+				<div class="row">
+					<div class="col-12 hashtag text-center py-1 text-orange">
+						#wecareformodels
+					</div>
+				</div>
 				<div class="row">
 					<?php if(get_field('facebook_url')){ ?>
 						<div class="col text-center">

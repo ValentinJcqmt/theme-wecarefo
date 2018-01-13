@@ -3,9 +3,9 @@ get_header(); ?>
 
 <div class="main">
 	<?php if(get_field('image_hp_mobile')){ ?>
-		<div class="container-fluid container-media-mobile hidden-lg-up mb-3">
-			<div class="img-hp-mobile-container">
-				<img src="<?php echo get_field('image_hp_mobile')['url']; ?>" class="img-fluid visuel-mobile-hp">
+		<div class="container-fluid container-media-mobile hidden-lg-up">
+			<div class="img-hp-mobile-container d-flex" id="hp-mobile-visuel">
+				<img src="<?php echo get_field('image_hp_mobile')['url']; ?>" class="img-fluid visuel-mobile-hp mt-auto">
 				<img src="<?php echo get_template_directory_uri()."/img/chevron-blanc.png"; ?>" id="chevron">
 			</div>
 		</div>
@@ -26,12 +26,13 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-	<?php if(get_field('link_list_hp_mobile')){ ?>
+	<?php if(get_field('link_list_hp_mobile')){
+		$n = 0; ?>
 		<?php foreach(get_field('link_list_hp_mobile') as $link){ ?>
-			<a href="<?php echo $link['link_type_hp_mobile'][0]['url_hp_mobile']; ?>" class="hidden-lg-up my-1 d-block bg-bandeau-hp-mobile text-black">
+			<a href="<?php echo $link['link_type_hp_mobile'][0]['url_hp_mobile']; ?>" class="hidden-lg-up my-1 d-block <?php if($n%2 == 0){echo"bg-light-pink";}else{echo"bg-pink";}?> bandeau-hp-mobile text-black">
 				<div class="row">
 					<div class="col-12 pl-4 py-2">
-						<div class="bandeau-title text-uppercase font-helvetica-lt">
+						<div class="bandeau-title text-uppercase font-helvetica-lt font-weight-bold">
 							<?php echo $link['link_title_hp_mobile'] ?>
 						</div>
 						<div class="bandeau-desc font-didot">
@@ -40,7 +41,8 @@ get_header(); ?>
 					</div>
 				</div>
 			</a>
-		<?php } ?>
+		<?php $n++;
+		} ?>
 	<?php } ?>
 
 	<div class="container-fluid container-crsl-hp py-4">

@@ -73,3 +73,9 @@ function image_tag_class($class) {
     return $class;
 }
 add_filter('get_image_tag_class', 'image_tag_class' );
+/*ACF : contenu post, page sauf home et faq**********************************************************************************/
+if( function_exists('acf_add_local_field_group') ):
+
+	include(get_template_directory().'/fields_acf/content_type_fields.php');
+
+endif;

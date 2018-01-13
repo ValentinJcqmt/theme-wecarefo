@@ -11,7 +11,8 @@ footer { border-top:solid 3px $black;}
 		}
 	}
 }
-#back-to-top{cursor:pointer;}
+footer .hashtag{font-size: 26px;}
+#back-to-top{cursor:pointer; width: 100%;}
 @media(max-width: 992px){
 	.footer-menu{
 		ul {

@@ -34,6 +34,7 @@ body{padding-top:140px;position:relative;font-family:'Montserrat', serif; backgr
 	body{padding-top: 0;}
 }
 .container-fluid{width:100%;max-width:1500px;margin-right:auto;margin-left:auto; padding-right:10px; padding-left: 10px;}
+.container-media-mobile{margin-bottom: 65px; padding-left: 0; padding-right: 0}
 a{	&:hover, &:active, &:focus, &:visited{text-decoration: none;}
 }
 p img.alignleft {
@@ -44,11 +45,13 @@ p img.alignright {
 	float: right;
 	margin-left: 15px;
 }
+p a, p a:hover, p a:active, p a:focus, p a:visited{color:$orange;}
 
 .font-didot{font-family: 'Didot';}
 .font-helvetica-md{font-family: 'HelveticaNeueLTStd-Md';}
 .font-helvetica-lt{font-family: 'HelveticaNeueLTStd-Lt';}
 .font-eaves-rom{font-family: 'MrsEavesOT-Roman';}
+.font-helvetica-lt.font-weight-bold{letter-spacing: 1px;} 
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -97,9 +100,13 @@ h5,.h5{font-weight:600;}
 .text-decoration-none:hover, a:hover .text-decoration-none{text-decoration:transparent;display:inline-block;width:100%;}
 /***********************************************************************************************************/
 /*Frontpage*/
+.rightblock a.bg-light-pink, .bg-light-pink.btn-panel, .doc-link.bg-light-pink, .push-btn.bg-light-pink{
+	transition:.3s;
+	&:hover{background:rgba(223,203,192,1);}
+}
 .img-hp-mobile-container{
 	overflow: hidden;
-    max-height: calc(100vh - 170px);
+    height: calc(100vh - 130px);
     position: relative;
 }
 .img-hp-mobile-container #chevron{
@@ -108,9 +115,24 @@ h5,.h5{font-weight:600;}
 	left:calc(50% - 17px);
 	cursor:pointer;
 }
-@media(max-height:550px){
-	.img-hp-mobile-container{
-	    max-height: calc(100vh - 148px);
+@media(max-width:992px){
+    .img-hp-mobile-container{
+	    height: calc(100vh - 215px);
+	}
+}
+@media(max-width:768px){
+    .img-hp-mobile-container{
+	    height: calc(100vh - 195px);
+	}
+}
+@media(max-width:568px){
+    .img-hp-mobile-container{
+	    height: calc(100vh - 175px);
+	}
+}
+@media(max-width:450px){
+    .img-hp-mobile-container{
+	    height: calc(100vh - 165px);
 	}
 }
 .post-hp .font-helvetica-lt{letter-spacing: 1px;}
@@ -148,13 +170,13 @@ h5,.h5{font-weight:600;}
 	.author-quote{font-size: 35px;padding-right:90px;font-style: italic}
 }
 .hp-quote:before{
-	content:url('../img/quote-2-pink.png');
+	content:url('../img/quote-2-pink.svg');
 	position: absolute;
 	top:-20px;
 	left:50px;
 }
 .hp-quote:after{
-	content:url('../img/quote-1-pink.png');
+	content:url('../img/quote-1-pink.svg');
 	position: absolute;
 	bottom:0;
 	right:50px;
@@ -182,15 +204,13 @@ h5,.h5{font-weight:600;}
 	.hp-quote:before{left:0;}
 	.hp-quote:after{right:0;}
 }
-.bg-bandeau-hp-mobile{
-	background:$light-pink;
-	transition:.3s;
+.bandeau-hp-mobile{
 	position:relative;
     padding-right: 95px;
 }
-.bg-bandeau-hp-mobile:after{
+.bandeau-hp-mobile:after{
 	content:"";
-	width:60px;
+	width:40px;
 	height: 60px;
 	display: block;
 	background:url('../img/chevron-black.png');
@@ -202,13 +222,10 @@ h5,.h5{font-weight:600;}
 	top: calc(50% - 30px);
 }
 .bandeau-title{font-size: 40px; letter-spacing: 5px;}
-.bandeau-desc{font-size: 30px;}
-.bg-bandeau-hp-mobile:hover{
-	background:$pink;
-}
+.bandeau-desc{font-size: 30px; font-style: italic;}
 @media(max-width: 792px){
-	.bg-bandeau-hp-mobile{padding-right: 40px;}
-	.bg-bandeau-hp-mobile:after{right: 0;}
+	.bandeau-hp-mobile{padding-right: 40px;}
+	.bandeau-hp-mobile:after{right: 0;}
 	.bandeau-title{font-size: 20px; letter-spacing: 1px;}
 	.bandeau-desc{font-size: 15px;}
 }
@@ -227,6 +244,12 @@ h5,.h5{font-weight:600;}
 }
 .rightblock, .leftblock{
 	.titre{font-style: italic}
+}
+@media(max-width:767px){
+	.rightblock, .leftblock{
+		.cat{font-size:15px;}
+		.titre{font-size:30px;}
+	}
 }
 @media(max-width:500px){
 	.rightblock .excerpt {
@@ -250,7 +273,7 @@ h5,.h5{font-weight:600;}
 .post-hp:not(.post-hp-first){border-top:solid 2px $orange;}
 
 /*** Page content ***/
-.single-post, .page-faq{
+.single-post, .page-faq, .page-template-default{
 	.relative{position: relative;}
 	.absolute{position: absolute;}
 	.content-1013{
@@ -269,16 +292,20 @@ h5,.h5{font-weight:600;}
 		font-weight: 400;
 		line-height: 43px;
 		text-align: center;
-		font-family:'Didot';
-		font-style: italic;
 		margin: 15px 0 30px 0;
+	}
+	.heading-1{
+		.chapo, .category{
+			font-family: "Didot";
+			font-style: italic;
+		}
+		h1{font-family: "HelveticaNeueLTStd-Lt"; font-weight: bold;}
 	}
 	.category{
 		color:  #1d1d1b;
 		font-size: 20px;
 		line-height: 36px;
 		text-align: center;
-		font-family: 'HelveticaNeueLTStd-Md';
 	}
 	/*heading 2*/
 	.heading-2{				
@@ -290,15 +317,18 @@ h5,.h5{font-weight:600;}
 		color:  #000000;
 		font-size: 30px;
 		font-weight: 400;
-		line-height: 77px;
+		line-height: 35px;
 		text-align: left;
 		text-transform: uppercase !important;
 		background-color: #DFCBC0;				
 		margin: 20px 0;
 		padding-left:50px;
+		padding-right:130px;
+		padding-top: 15px;
+		padding-bottom: 15px;
 	}
 	.number{
-		top: 0;
+		top: calc(50% - 33px);
 		right: 0;
 		color:  #000000;
 		font-size: 149.85px;
@@ -312,7 +342,7 @@ h5,.h5{font-weight:600;}
 	/*content*/
 	.content-text{
 		color:  #1d1d1b;
-		font-size: 27px;
+		font-size: 25px;
 		line-height: 36px;
 		text-align: left;
 		font-family: 'MrsEavesOT-Roman';
@@ -415,11 +445,12 @@ h5,.h5{font-weight:600;}
 	}
 }
 @media(max-width:600px){
-	.single-post, .page-faq{
+	.single-post, .page-faq, .page-template-default{
 		h2 {
-		    font-size: 30px;
-		    line-height: 60px;
+		    font-size: 27px;
+		    line-height: 33px;
 		    padding-left: 20px;
+		    padding-right:70px;
 		}
 		.number {
 		    font-size: 120px;
@@ -439,6 +470,14 @@ h5,.h5{font-weight:600;}
 	    line-height: 30px;
 	}
 }
+@media(max-width:500px){
+	.single-post, .page-faq, .page-template-default{
+		h2 {
+		    font-size: 23px;
+		    line-height: 27px;
+		}
+	}
+}
 
 /*FAQ*/
 .faq-panels{
@@ -454,12 +493,22 @@ h5,.h5{font-weight:600;}
 		margin-top: -1px;
 	    padding: 20px 30px 20px 20px;
 	}
-	button.btn-panel:after,	button.btn-question:after{
+	button.btn-panel:after{
 		color: #000;
 	    font-weight: lighter;
 	    font-size: 45px;
 	    position: absolute;
-	    font-family: Arial;
+	    font-family: "HelveticaNeueLTStd-Lt";
+	    right: 15px;
+	    top: calc( 50% - ( 63px / 2 ) );
+	    line-height: 63px;
+	}
+	button.btn-question:after{
+		color: #000;
+	    font-weight: lighter;
+	    font-size: 35px;
+	    position: absolute;
+	    font-family: 'MrsEavesOT-Roman';
 	    right: 15px;
 	    top: calc( 50% - ( 63px / 2 ) );
 	    line-height: 63px;

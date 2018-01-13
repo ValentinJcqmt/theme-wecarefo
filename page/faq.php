@@ -36,7 +36,7 @@
 			<div class="row">
 				<div class="col-12 p-2 p-md-4 faq-panels">
 					<?php foreach ($faq_panels as $panel) { ?>
-						<button type="button" class="mt-2 bg-pink text-uppercase text-left font-helvetica-md text-black btn-panel collapsed" data-toggle="collapse" data-target="#panel-<?php echo $npanel; ?>">
+						<button type="button" class="mt-2 bg-light-pink text-uppercase text-left font-helvetica-lt font-weight-bold text-black btn-panel collapsed" data-toggle="collapse" data-target="#panel-<?php echo $npanel; ?>">
 							<?php echo $panel['panel_title']; ?>
 						</button>
 						<div id="panel-<?php echo $npanel; ?>" class="collapse panel">
